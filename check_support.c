@@ -86,9 +86,9 @@ int main() {
 	const char *server_info = mysql_get_server_info(mysql);
 	printf("Server info: %s \n", server_info);
 
-	cs_query(mysql, "CREATE DATABASE IF NOT EXISTS check_support_test_db");
 	cs_query(mysql, "SET @@SESSION.session_track_system_variables='*'");
 	cs_query(mysql, "SET @@SESSION.session_track_schema=ON");
+	cs_query(mysql, "CREATE DATABASE IF NOT EXISTS check_support_test_db");
 	cs_query(mysql, "USE check_support_test_db");
 	cs_query(mysql, "DROP TABLE IF EXISTS test1");
 	cs_query(mysql, "CREATE TABLE test1 ( name VARCHAR(255) )");
